@@ -1,0 +1,54 @@
+{
+    "servicios": [
+        {
+            "id": 1,
+            "nombre": "HimFu",
+            "precio": 80
+        },
+        {
+            "id": 2,
+            "nombre": "Criólipolisis",
+            "precio": 60
+        },
+        {
+            "id": 3,
+            "nombre": "Dermohealth",
+            "precio": 100
+        },
+        {
+            "id": 4,
+            "nombre": "Pulso magenetico",
+            "precio": 100
+        },
+        {
+            "id": 5,
+            "nombre": "Venus Legacy",
+            "precio": 60
+        },
+        {
+            "id": 6,
+            "nombre": "Ondas de choque",
+            "precio": 100
+        },
+        {
+            "id": 7,
+            "nombre": "Electrodos",
+            "precio": 300
+        },
+        {
+            "id": 8,
+            "nombre": "Radiofrecuencia",
+            "precio": 400
+        },
+        {
+            "id": 9,
+            "nombre": "Anti-aging",
+            "precio":50
+        },
+        {
+            "id": 10,
+            "nombre" : "Peelings",
+            "precio":150
+        }
+    ]
+}

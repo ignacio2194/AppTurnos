@@ -1,0 +1,26 @@
+.listado-servicios{
+    @include tablet{
+         @include grid (2,2rem);
+    }
+  .servicioDiv{
+      text-align: center;
+      text-transform: uppercase;
+      background-color: $blanco;
+      border-radius: 5%;
+   .nombre-servicio{
+color: $negro;
+   }
+   .precio-servicio{
+color: $verde;
+font-size: 3rem;
+font-weight: $bold;
+   }&.seleccionado{
+      background-color: aqua;
+      p{
+         color: $blanco;
+      }
+   }
+      
+  }
+  
+}
