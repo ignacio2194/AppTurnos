@@ -5,7 +5,7 @@ const turno = {
   fecha: "",
   hora: "",
   servicio: [],
-  telefono: "",
+  telefono: ""
 };
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -196,13 +196,13 @@ function mostrarResumen() {
   const turnoFecha = document.createElement("P");
   const horaTurno = document.createElement("P");
   const servTurno = document.createElement("P");
-  const telTurno = document.createElement("P");
+  const textoTel = document.createElement("P");
 
-  nombreTurno.innerHTML = `<span>Nombre:</span>${nombre}`;
-  turnoFecha.innerHTML = `<span>fecha:</span>${fecha}`;
+  nombreTurno.innerHTML = `<span>Nombre:</span> ${nombre}`;
+  turnoFecha.innerHTML = `<span>fecha:</span> ${fecha}`;
   servTurno.innerHTML = `<span>Servicio:</span>${servicio}`;
-  horaTurno.innerHTML = `<span>Hora:</span>${hora}`;
-  telTurno.innerHTML = `<span>Telefono:</span>${telefono}`;
+  horaTurno.innerHTML = `<span>Hora:</span> ${hora}`;
+  textoTel.innerHTML = `<span>Telefono:</span> ${telefono}`;
 
 
   const serviciosTurno = document.createElement('DIV');
@@ -211,30 +211,39 @@ function mostrarResumen() {
   resumenDiv.appendChild(nombreTurno);
   resumenDiv.appendChild(turnoFecha);
 //iterar sobre cada servicio
+let cantidad =0;
 servicio.forEach(servicios=>{
  const  {nombre,precio} = servicios ;
+ const {telefono}= turno ;
 const contenedorServicio =document.createElement('DIV') ; 
 contenedorServicio.classList.add('contenedor-servicio') ;
+const textoTel=document.createElement('P')
+textoTel.textContent=telefono;
 
 const textoServicio=document.createElement('P')
 textoServicio.textContent=nombre;
 
 const precioServicio=document.createElement('P')
-textoServicio.textContent=precio;
-
-
+precioServicio.textContent=precio;
+precioServicio.classList.add('precio')
+const totalServicio = precio.split('$')
+//console.log(parseInt(totalServicio[1].trim()));
+cantidad+=parseInt(totalServicio[1].trim())
 // colocar texto y precio en el div
 contenedorServicio.appendChild(textoServicio);
-contenedorServicio.appendChild(precioServicio)
-;
+contenedorServicio.appendChild(precioServicio);
 serviciosTurno.appendChild(contenedorServicio);
 
 })
 resumenDiv.appendChild(nombreTurno);
 resumenDiv.appendChild(turnoFecha);
 resumenDiv.appendChild(horaTurno);
+resumenDiv.appendChild(textoTel);
 resumenDiv.appendChild(serviciosTurno);
-
+const totalApagar= document.createElement('P')
+totalApagar.classList.add('total')
+totalApagar.innerHTML=`<span> Total a pagar :</span> $ ${cantidad} `
+resumenDiv.appendChild(totalApagar)
 }
 function nombreTurno() {
   const nombreInput = document.querySelector("#nombre");
